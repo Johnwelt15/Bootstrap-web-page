@@ -1,81 +1,121 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Pukkapon Kaewkum</title>
 
-{% block title %}เกี่ยวกับเรา{% endblock title %}
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
 
-{% block content %}
-<div class="position-relative py-5">
-    <!-- ลูกโลกหมุนมุมซ้ายบน -->
-    <div style="position: absolute; top: 20px; left: 20px; z-index: 10;">
-        <div class="globe-spin">
-            <svg width="60" height="60" viewBox="0 0 60 60">
-                <circle cx="30" cy="30" r="28" fill="#232526" stroke="#08d9d6" stroke-width="3"/>
-                <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#ff2e63" stroke-width="2"/>
-                <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#ff2e63" stroke-width="2"/>
-                <ellipse cx="30" cy="30" rx="18" ry="18" fill="none" stroke="#08d9d6" stroke-width="1.5"/>
-            </svg>
-        </div>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      font-family: 'Kanit', 'Roboto', sans-serif;
+      color: #e0eaff;
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .about-container {
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 30px 60px; /* เพิ่ม padding ล่างเผื่อรูปลอย */
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      position: relative;
+    }
+    /* กรอบรูปโปรไฟล์ */
+    .profile-img-wrapper {
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 160px;
+      border: 5px solid white;
+      border-radius: 50%;
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 0 20px #7dafff;
+    }
+    .profile-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #a9c8ff;
+      text-align: center;
+      text-shadow: 0 0 10px #7dafff;
+      margin-top: 90px; /* เว้นที่ว่างให้รูป */
+    }
+    .section-title {
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #d1e7ff;
+      border-bottom: 2px solid #7dafff;
+      padding-bottom: 5px;
+    }
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #cbdcff;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      color: #cbdcff;
+      font-size: 1.1rem;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="about-container">
+    <!-- กรอบรูปโปรไฟล์ -->
+    <div class="profile-img-wrapper">
+      <img src="https://pbs.twimg.com/media/Gt45tpxWoAAwn1K?format=jpg&name=900x900" alt="Profile Picture" />
     </div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-8">
-                <div class="card shadow-lg border-0" style="background: rgba(30,30,30,0.95); border: 2px solid #ff2e63;">
-                    <div class="card-header text-center border-0" style="background: #232526; color: #ff2e63; letter-spacing: 0.1em; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526;">
-                        <h3 class="mb-0" style="animation: flicker1984 2s infinite alternate;">เกี่ยวกับฉัน</h3>
-                         <!-- ลูกโลกหมุนมุมซ้ายบนของ card -->
-                    <div style="position: absolute; top: -5px; left: 10px; z-index: 10;">
-                        <div class="globe-spin">
-                            <svg width="35" height="60" viewBox="0 0 60 60">
-                                <circle cx="30" cy="30" r="28" fill="#232526" stroke="#08d9d6" stroke-width="3"/>
-                                <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#ff2e63" stroke-width="2"/>
-                                <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#ff2e63" stroke-width="2"/>
-                                <ellipse cx="30" cy="30" rx="18" ry="18" fill="none" stroke="#08d9d6" stroke-width="1.5"/>
-                            </svg>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="card-body" style="color: #08d9d6; font-size: 1.2rem;">
-                        <p style="text-shadow: 0 0 5px #08d9d6;">
-                            ผมเป็นคนปกติที่ชอบค้นคว้าสิ่งที่ผมสนใจ และขอบเล่นเกม<br>
-                            มีกิจกรรมไปเที่นวนิดหน่อยเป็นบางครั้ง<br>
-                            <br>
-                            <span style="text-shadow: 0 0 5px #08d9d6;">ตอนนี้ยังไม่มีอาชีพที่จะเลือก แต่จะลองหาที่เหมาะกันอยู่</span>
-                        </p>
-                        <hr style="border-color:#ff2e63;">
-                        <ul class="list-unstyled">
-                            <li><strong>ชื่อ:</strong> Pukkapon Kaewkum</li>
-                            <li><strong>การศึกษา:</strong> ม.ต้น/ปลาย โรงเรียนศรีสะเกษวิทยาลัย</li>
-                            <li><strong>ปัจจุบัน:</strong> นักศึกษาวิทยาการคอมพิวเตอร์</li>
-                            {% comment %} <li><strong>ความสนใจ:</strong> เทคโนโลยี, เกมเมอร์, ประวัติศาสตร์ และอื่นๆ</li> {% endcomment %}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<style>
-/* ลูกโลกหมุน */
-.globe-spin {
-    animation: globe-rotate 3s linear infinite;
-    filter: drop-shadow(0 0 8px #08d9d6);
-}
-@keyframes globe-rotate {
-    0% { transform: rotate(0deg);}
-    100% { transform: rotate(360deg);}
-}
-/* ฟอนต์และแสงแบบ dystopian */
-.card-header h3 {
-    animation: flicker1984 2s infinite alternate;
-}
-@keyframes flicker1984 {
-    0% { opacity: 1; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; }
-    50% { opacity: 0.85; text-shadow: 0 0 20px #ff2e63, 0 0 60px #232526; }
-    100% { opacity: 1; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; }
-}
-.card {
-    box-shadow: 0 0 20px #232526, 0 0 40px #ff2e63 inset;
-}
-</style>
 
-{% endblock content %}
+    <h1>เกี่ยวกับฉัน (About Me)</h1>
+
+    <section>
+      <h2 class="section-title">ข้อมูลส่วนตัว</h2>
+      <p>ผมชื่อ <strong>Pukkapon Kaewkum</strong> เป็นนักศึกษาชั้นปีที่ 2 สาขาวิทยาการคอมพิวเตอร์ครับ</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">ความสนใจและกิจกรรม</h2>
+      <p>ผมชอบค้นคว้าและเรียนรู้เรื่องเทคโนโลยีใหม่ ๆ รวมถึงการพัฒนาเว็บและแอปพลิเคชันต่าง ๆ นอกจากนี้ยังชอบเล่นเกมและทำกิจกรรมผ่อนคลายบางครั้งครับ</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">เป้าหมายในอนาคต</h2>
+      <ul>
+        <li>พัฒนาทักษะการเขียนโปรแกรมให้แข็งแรง</li>
+        <li>เรียนรู้และทำโปรเจคจริงเพื่อนำไปใช้ในงานจริง</li>
+        <li>หางานที่ตรงกับความสนใจและความสามารถ</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -3,38 +3,26 @@
 {% block title %}ติดต่อเรา{% endblock title %}
 
 {% block content %}
-<div class="position-relative py-5">
-    
-    <div class="container mt-5">
+<div class="position-relative py-5 contact-bg">
+    <div class="overlay"></div>
+    <div class="container mt-5 position-relative" style="z-index: 10;">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
-                <div class="card shadow-lg border-0 position-relative" 
-                style="background: rgba(30,30,30,0.92); border: 2px solid #ff2e63;">
-                   
-                    <div class="card-header text-center border-0" style="background: #232526; color: #ff2e63; letter-spacing: 0.1em; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; position: relative; z-index: 20;">
-                        <h4 class="mb-0">ติดต่อเรา</h4>
-                         <!-- ลูกโลกหมุนมุมซ้ายบนของ card -->
-                    <div style="position: absolute; top: -8px; left: 10px; z-index: 10;">
-                        <div class="globe-spin">
-                            <svg width="35" height="60" viewBox="0 0 60 60">
-                                <circle cx="30" cy="30" r="28" fill="#232526" stroke="#08d9d6" stroke-width="3"/>
-                                <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#ff2e63" stroke-width="2"/>
-                                <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#ff2e63" stroke-width="2"/>
-                                <ellipse cx="30" cy="30" rx="18" ry="18" fill="none" stroke="#08d9d6" stroke-width="1.5"/>
-                            </svg>
-                        </div>
+                <div class="card shadow-lg border-0 position-relative"
+                     style="background: rgba(255, 255, 255, 0.1); border: 2px solid #7dafff; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    
+                    <div class="card-header text-center border-0"
+                         style="background: #23395d; color: #7dafff; letter-spacing: 0.1em; text-shadow: 0 0 10px #7dafff, 0 0 40px #23395d;">
+                        <h4 class="mb-0" style="font-weight: 700;">ติดต่อเรา</h4>
                     </div>
-                    </div>
-                    <div class="card-body" style="color: #08d9d6;">
+                    
+                    <div class="card-body" style="color: #cbdcff; font-size: 1.1rem;">
                         <ul class="list-group list-group-flush" style="background: transparent;">
-                            <li class="list-group-item bg-transparent border-0" style="color:#ff2e63;">
-                                <i class="fab fa-facebook-square"></i> Facebook: <span style="color:#08d9d6;">Maccky Mayer</span>
+                            <li class="list-group-item bg-transparent border-0" style="color:#7dafff;">
+                                <i class="fab fa-facebook-square"></i> Facebook: <span style="color:#cbdcff;">Maccky Mayer</span>
                             </li>
-                            <li class="list-group-item bg-transparent border-0" style="color:#ff2e63;">
-                                <i class="fab fa-line"></i> Line: <span style="color:#08d9d6;">max1649</span>
-                            </li>
-                            {% comment %} <li class="list-group-item bg-transparent border-0" style="color:#ff2e63;">
-                                <i class="fas fa-envelope"></i> Email: <span style="color:#08d9d6;">pukkapon12345@gmail.com</span> {% endcomment %}
+                            <li class="list-group-item bg-transparent border-0" style="color:#7dafff;">
+                                <i class="fab fa-line"></i> Line: <span style="color:#cbdcff;">max1649</span>
                             </li>
                         </ul>
                     </div>
@@ -43,25 +31,39 @@
         </div>
     </div>
 </div>
+
 <style>
-.globe-spin {
-    animation: globe-rotate 3s linear infinite;
-    filter: drop-shadow(0 0 8px #08d9d6);
-}
-@keyframes globe-rotate {
-    0% { transform: rotate(0deg);}
-    100% { transform: rotate(360deg);}
-}
-.card-header h4, .btn {
-    animation: flicker1984 2s infinite alternate;
-}
-@keyframes flicker1984 {
-    0% { opacity: 1; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; }
-    50% { opacity: 0.85; text-shadow: 0 0 20px #ff2e63, 0 0 60px #232526; }
-    100% { opacity: 1; text-shadow: 0 0 10px #ff2e63, 0 0 40px #232526; }
-}
-.card {
-    box-shadow: 0 0 20px #232526, 0 0 40px #ff2e63 inset;
-}
+    .contact-bg {
+        background-image: url('https://www.gematsu.com/wp-content/uploads/2025/06/Honkai-Star-Rail_2025_06-20-25_027-1920x1080.jpg');
+        background-size: cover;
+        background-position: center center;
+        min-height: 100vh;
+        position: relative;
+        color: white;
+    }
+    .overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(18, 35, 64, 0.75); /* ทึบฟ้าเข้ม */
+        z-index: 1;
+    }
+
+    /* ปรับแอนิเมชั่น flicker ให้สีน้ำเงิน */
+    .card-header h4 {
+        animation: flickerBlue 2s infinite alternate;
+        font-family: 'Kanit', sans-serif;
+    }
+    @keyframes flickerBlue {
+        0% { opacity: 1; text-shadow: 0 0 10px #7dafff, 0 0 40px #23395d; }
+        50% { opacity: 0.85; text-shadow: 0 0 20px #7dafff, 0 0 60px #23395d; }
+        100% { opacity: 1; text-shadow: 0 0 10px #7dafff, 0 0 40px #23395d; }
+    }
+
+    /* การตั้งค่าไอคอนให้ดูดีขึ้น */
+    i.fab, i.fas {
+        margin-right: 8px;
+        color: #7dafff;
+        font-size: 1.3rem;
+    }
 </style>
 {% endblock content %}

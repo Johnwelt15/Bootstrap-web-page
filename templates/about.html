@@ -7,7 +7,6 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
@@ -16,22 +15,35 @@
       font-family: 'Kanit', 'Roboto', sans-serif;
       color: #e0eaff;
       min-height: 100vh;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      padding-top: 80px;
     }
+
+    .navbar-custom {
+      background: rgba(36, 70, 120, 0.9);
+      backdrop-filter: blur(6px);
+    }
+
+    .nav-link {
+      color: #d1e7ff !important;
+      font-weight: 500;
+    }
+
+    .nav-link.active, .nav-link:hover {
+      color: #ffffff !important;
+      text-shadow: 0 0 8px #ffffff;
+    }
+
     .about-container {
       max-width: 700px;
       background: rgba(255, 255, 255, 0.1);
-      padding: 40px 30px 60px; /* เพิ่ม padding ล่างเผื่อรูปลอย */
+      padding: 40px 30px 60px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      margin: auto;
       position: relative;
     }
-    /* กรอบรูปโปรไฟล์ */
+
     .profile-img-wrapper {
       position: absolute;
       top: -80px;
@@ -45,6 +57,7 @@
       overflow: hidden;
       box-shadow: 0 0 20px #7dafff;
     }
+
     .profile-img-wrapper img {
       width: 100%;
       height: 100%;
@@ -53,42 +66,64 @@
 
     h1 {
       font-weight: 700;
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      color: #a9c8ff;
+      font-size: 2.6rem;
       text-align: center;
+      margin-top: 100px;
+      margin-bottom: 30px;
+      color: #a9c8ff;
       text-shadow: 0 0 10px #7dafff;
-      margin-top: 90px; /* เว้นที่ว่างให้รูป */
     }
+
     .section-title {
       font-weight: 700;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       margin-top: 30px;
       margin-bottom: 15px;
       color: #d1e7ff;
       border-bottom: 2px solid #7dafff;
       padding-bottom: 5px;
     }
-    p {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: #cbdcff;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-      color: #cbdcff;
+
+    p, li {
       font-size: 1.1rem;
+      color: #cbdcff;
     }
-    ul li {
-      margin-bottom: 8px;
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aac6ff;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Pukkapon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">หน้าแรก</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'about' %}">เกี่ยวกับ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">ติดต่อ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
   <main class="about-container">
-    <!-- กรอบรูปโปรไฟล์ -->
     <div class="profile-img-wrapper">
       <img src="https://pbs.twimg.com/media/Gt45tpxWoAAwn1K?format=jpg&name=900x900" alt="Profile Picture" />
     </div>
@@ -113,9 +148,13 @@
         <li>หางานที่ตรงกับความสนใจและความสามารถ</li>
       </ul>
     </section>
-
   </main>
+
+  <footer>
+    © 2025 Pukkapon Kaewkum
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

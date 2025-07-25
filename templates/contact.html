@@ -6,23 +6,33 @@
 <div class="position-relative py-5 contact-bg">
     <div class="overlay"></div>
     <div class="container mt-5 position-relative" style="z-index: 10;">
+        
+        <!-- ปุ่มเมนู -->
+        <div class="text-center mb-4">
+            <a href="/" class="btn btn-outline-light me-2">🏠 Home</a>
+            <a href="/about/" class="btn btn-outline-light">👤 About</a>
+        </div>
+
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
                 <div class="card shadow-lg border-0 position-relative"
-                     style="background: rgba(111, 111, 111, 0); border: 2px solid #7dafff; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                     style="background: rgba(255, 255, 255, 0.1); border: 2px solid #7dafff; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
                     
                     <div class="card-header text-center border-0"
-                         style="background: #c5c5c500; color: #7dafff; letter-spacing: 0.1em; text-shadow: 0 0 10px #7dafff, 0 0 40px #23395d;">
+                         style="background: transparent; color: #7dafff; letter-spacing: 0.05em; text-shadow: 0 0 8px #7dafff, 0 0 30px #23395d;">
                         <h4 class="mb-0" style="font-weight: 700;">ติดต่อเรา</h4>
                     </div>
                     
-                    <div class="card-body" style="color: #cbdcff; font-size: 1.1rem;">
+                    <div class="card-body" style="color: #e6efff; font-size: 1.1rem;">
                         <ul class="list-group list-group-flush" style="background: transparent;">
                             <li class="list-group-item bg-transparent border-0" style="color:#7dafff;">
-                                <i class="fab fa-facebook-square"></i> Facebook: <span style="color:#cbdcff;">Maccky Mayer</span>
+                                <i class="fab fa-facebook-square"></i> Facebook: <span style="color:#e6efff;">Maccky Mayer</span>
                             </li>
                             <li class="list-group-item bg-transparent border-0" style="color:#7dafff;">
-                                <i class="fab fa-line"></i> Line: <span style="color:#cbdcff;">max1649</span>
+                                <i class="fab fa-line"></i> Line: <span style="color:#e6efff;">max1649</span>
+                            </li>
+                            <li class="list-group-item bg-transparent border-0" style="color:#7dafff;">
+                                <i class="fas fa-envelope"></i> Email: <span style="color:#e6efff;">maccky@example.com</span>
                             </li>
                         </ul>
                     </div>
@@ -34,36 +44,46 @@
 
 <style>
     .contact-bg {
-        background-image: url('https://images2.minutemediacdn.com/image/upload/c_crop,w_1834,h_1031,x_26,y_0/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/dbltap_en_international_web/01jypbw0jtbhhn5wtjzq.jpg');
+        background-image: url('https://images2.minutemediacdn.com/image/upload/c_crop,w_1834,h_1031,x_26,y_0/c_fill,w_1920,ar_16:9,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/dbltap_en_international_web/01jypbw0jtbhhn5wtjzq.jpg');
         background-size: cover;
         background-position: center center;
         min-height: 100vh;
         position: relative;
         color: white;
     }
+
     .overlay {
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background-color: rgba(18, 35, 64, 0.75); /* ทึบฟ้าเข้ม */
+        background-color: rgba(20, 40, 75, 0.65); /* สว่างขึ้น */
         z-index: 1;
     }
 
-    /* ปรับแอนิเมชั่น flicker ให้สีน้ำเงิน */
     .card-header h4 {
         animation: flickerBlue 2s infinite alternate;
         font-family: 'Kanit', sans-serif;
     }
+
     @keyframes flickerBlue {
-        0% { opacity: 1; text-shadow: 0 0 10px #7dafff, 0 0 40px #bfc8c8; }
-        50% { opacity: 0.85; text-shadow: 0 0 20px #7dafff, 0 0 60px #80a6e3; }
-        100% { opacity: 1; text-shadow: 0 0 10px #7dafff, 0 0 40px #6a89bc; }
+        0% { opacity: 1; text-shadow: 0 0 10px #7dafff, 0 0 30px #bfc8c8; }
+        50% { opacity: 0.9; text-shadow: 0 0 15px #7dafff, 0 0 50px #a5bdf4; }
+        100% { opacity: 1; text-shadow: 0 0 10px #7dafff, 0 0 30px #6a89bc; }
     }
 
-    /* การตั้งค่าไอคอนให้ดูดีขึ้น */
     i.fab, i.fas {
         margin-right: 8px;
         color: #7dafff;
         font-size: 1.3rem;
+    }
+
+    .btn-outline-light {
+        border-color: #7dafff;
+        color: #e6efff;
+    }
+
+    .btn-outline-light:hover {
+        background-color: #7dafff;
+        color: #0e1e3b;
     }
 </style>
 {% endblock content %}

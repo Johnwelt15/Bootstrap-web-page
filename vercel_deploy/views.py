@@ -8,3 +8,8 @@ def about(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def forPage(request):
+    context = {}
+    context ['count'] = list(range(1, 11))
+    return render(request, 'for.html')
